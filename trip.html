@@ -1,13 +1,118 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Reisebuchungs-Formular</title>
+    <meta charset="UTF-8">
+    <title>Reisebuchungs-Formular</title>
 
 </head>
 <body>
 
 <h1>Reisebuchungs-Formular</h1>
+<form action="https://it.bzz.ch/demo/formdata/index.php">
+    <fieldset>
+        <legend>Personal</legend>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email">
+    </fieldset>
+    <fieldset>
+        <legend>Unterkunft</legend>
+        <input type="radio" name="unterkunft" value="hotel" id="hotel">
+        <label for="hotel">Hotel</label>
+        <input type="radio" name="unterkunft" value="hostel" id="hostel">
+        <label for="hostel">Hostel</label>
+        <input type="radio" name="unterkunft" value="ferienwohnung" id="ferien">
+        <label for="ferien">Ferienwohnung</label>
+    </fieldset>
+    <fieldset>
+        <legend>Dienstleistungen</legend>
+        <input type="checkbox" name="dienstleistungen[]" value="reiseversicherung" id="ver">
+        <label for="ver">Reiseversicherung</label>
+        <input type="checkbox" name="dienstleistungen[]" value="flughafentransfer" id="flug">
+        <label for="flug">Flughafentransfer</label>
+        <input type="checkbox" name="dienstleistungen[]" value="zusaetzliches Gepaeck" id="gep">
+        <label for="gep">Zusätzliches Gepaeck</label>
+    </fieldset>
+    <fieldset>
+        <p>
+            <label> Reiseort:
+                <input type="search" list="Reiseorte"/>
+                <datalist id="Reiseorte">
+                    <option value="Italien">
+                    <option value="Deutschland">
+                    <option value="Belgien">
+                    <option value="Finnland">
+                    <option value="Norwegen">
+                    <option value="Schweiz">
+                    <option value="Österreich">
+                    <option value="Frankreich">
+                    <option value="Spanien">
+                </datalist>
+            </label>
+        </p>
+
+        <fieldset>
+            <label for="von">Von:</label>
+            <input type="date" name="von" id="von"><br><br>
+            <label for="bis">Von:</label>
+            <input type="date" name="bis" id="bis"><br><br>
+            <label for="tage">Anzahl Tage:</label>
+            <input type="number" name="tage" id="tage" max="21" min="1" placeholder="1-21"><br><br>
+            <label for="personen">Anzahl Personen:</label>
+            <input type="number" name="personen" id="personen" max="5" min="1">
+        </fieldset>
+        <fieldset>
+
+            <label for="abflugflughaefen">Abflugflughaefen:
+                <select name="abflugflughaefen" id="abflugflughaefen" required>
+                    <optgroup label="Flughaefen Schweiz">
+                        <option>Zuerich</option>
+                        <option>Basel</option>
+                        <option>Genf</option>
+                    </optgroup>
+                    <optgroup label="Flughaefen Italien">
+                        <option>Mailand</option>
+                        <option>Turin</option>
+                        <option>Bologna</option>
+                    </optgroup>
+                    <optgroup label="Flughaefen Frankreich">
+                        <option>Paris</option>
+                        <option>XY</option>
+                        <option>XY</option>
+                    </optgroup>
+                    <optgroup label="Flughaefen Deutschland">
+                        <option>München</option>
+                        <option>Berlin</option>
+                        <option>Frankreich</option>
+
+                    </optgroup>
+                    <optgroup label="Flughaefen Oesterreich">
+                        <option>Wien</option>
+                        <option>XY</option>
+                        <option>XY</option>
+                    </optgroup>
+                </select>
+            </label><br><br>
+            <label for="fluggesellschaft">Fluggesellschaft</label>
+            <select name="fluggeselschaft" id="fluggesellschaft" required>
+                <option>Swiss</option>
+                <option>Edelweiss</option>
+                <option>Lufthansa</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Flug Dienstleistungen</legend>
+            <input type="checkbox" name="flugdienstleistungen[]" value="priority check" id="check">
+            <label for="check">Priority Check</label>
+            <input type="checkbox" name="flugdienstleistungen[]" value="zusätzliches Handgepäck" id="hand">
+            <label for="hand">Zusätzliches Handgepäck</label>
+            <input type="checkbox" name="flugdienstleistungen[]" value="Buchung Mietwagen" id="miet">
+            <label for="miet">Buchung Mietwagen</label>
+        </fieldset>
+    </fieldset>
+    <button type="submit">submit</button>
+    <button type="reset">reset</button>
+</form>
 
 
 </body>
